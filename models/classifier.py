@@ -19,6 +19,7 @@ class Classifier(nn.Module):
 
 		self.pooling = Pooling('max')
 
+
 	def forward(self, input_data):
 		output = self.pooling(self.feature_model(input_data))
 		output = F.relu(self.bn1(self.linear1(output)))
